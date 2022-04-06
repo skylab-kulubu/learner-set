@@ -1,0 +1,11 @@
+|	arch kurulum videosu					|
+|	https://www.youtube.com/watch?v=u2l54FMgWq4		|
+|	arch faydalı araçlar					|
+|	https://www.youtube.com/watch?v=jW4GFGOIUjc		|
+|	arch türkçe anlatım					|
+|	https://www.youtube.com/watch?v=AbBd4bYdJtI		|
+|	arch indirme linki					|
+|	https://archive.archlinux.org/iso/2022.03.01/		|
+|	linux dağıtımları (hafif)				|
+|	https://fossbytes.com/best-lightweight-linux-distros/	|
+
