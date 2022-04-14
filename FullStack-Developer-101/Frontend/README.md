@@ -1,27 +1,29 @@
-# Frontend
+# NgTodo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.6.
+Basic Angular Todo application for SkyLab Fullstack Web Course
 
-## Development server
+# Live Demo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Live example available on https://bariscanyilmaz.github.io/ng-todo/
 
-## Code scaffolding
+# How To Install & Run
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Download project 
 
-## Build
+```
+git clone github.com/bariscanyilmaz/ng-todo
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Change directory
 
-## Running unit tests
+```
+cd ng-todo
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Install dependencies and run the project
 
-## Running end-to-end tests
+```
+npm install && npm run start
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Navigate your browser to http://localhost:4200
