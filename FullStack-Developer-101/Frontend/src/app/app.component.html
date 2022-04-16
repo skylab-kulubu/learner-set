@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="item" *ngFor="let item of todos;index as i">
+        <h3 [style.text-decoration]="item.isDone ? 'line-through':'none'">{{item.task}}</h3>
+        <div class="actions">
+            <input type="checkbox" [(ngModel)]="item.isDone">
+            <button (click)="removeItem(i)">Remove</button>
+        </div>
+
+    </div>
+</div>
+<input (keyup.enter)="addItem()" type="text" [(ngModel)]="job">
+<button (click)="addItem()">Add</button>
