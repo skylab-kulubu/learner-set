@@ -1,0 +1,993 @@
+    <!DOCTYPE html>
+    <html lang="tr">
+    <head itemscope itemtype="http://schema.org/WebSite">
+	    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v18.6 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Arch Linux kurulumu - Linux Sorularım</title>
+	<link rel="canonical" href="https://linuxsorularim.com/arch-linux-kurulumu" />
+	<meta property="og:locale" content="tr_TR" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Arch Linux kurulumu - Linux Sorularım" />
+	<meta property="og:description" content="Arch, tty ekranından kurulumu yapılan bir dağıtımdır. Calameres kurucusunun yaptıklarını terminalden yapıyoruz aslında." />
+	<meta property="og:url" content="https://linuxsorularim.com/arch-linux-kurulumu" />
+	<meta property="og:site_name" content="Linux Sorularım" />
+	<meta property="article:published_time" content="2021-05-09T07:39:16+00:00" />
+	<meta property="article:modified_time" content="2021-05-09T07:42:53+00:00" />
+	<meta property="og:image" content="https://linuxsorularim.com/wp-content/uploads/2021/05/Screenshot-from-2021-05-09-10-28-53.png" />
+	<meta property="og:image:width" content="1920" />
+	<meta property="og:image:height" content="1080" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Yazan:" />
+	<meta name="twitter:data1" content="Berke" />
+	<meta name="twitter:label2" content="Tahmini okuma süresi" />
+	<meta name="twitter:data2" content="4 dakika" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://linuxsorularim.com/#website","url":"https://linuxsorularim.com/","name":"Linux Sorularım","description":"GNU/Linux hakkında her şey.","publisher":{"@id":"https://linuxsorularim.com/#/schema/person/86b29532e69d2b8d84a94ebc00aaf0dd"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://linuxsorularim.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"tr"},{"@type":"ImageObject","@id":"https://linuxsorularim.com/arch-linux-kurulumu#primaryimage","inLanguage":"tr","url":"https://linuxsorularim.com/wp-content/uploads/2021/05/Screenshot-from-2021-05-09-10-28-53.png","contentUrl":"https://linuxsorularim.com/wp-content/uploads/2021/05/Screenshot-from-2021-05-09-10-28-53.png","width":1920,"height":1080},{"@type":"WebPage","@id":"https://linuxsorularim.com/arch-linux-kurulumu#webpage","url":"https://linuxsorularim.com/arch-linux-kurulumu","name":"Arch Linux kurulumu - Linux Sorularım","isPartOf":{"@id":"https://linuxsorularim.com/#website"},"primaryImageOfPage":{"@id":"https://linuxsorularim.com/arch-linux-kurulumu#primaryimage"},"datePublished":"2021-05-09T07:39:16+00:00","dateModified":"2021-05-09T07:42:53+00:00","breadcrumb":{"@id":"https://linuxsorularim.com/arch-linux-kurulumu#breadcrumb"},"inLanguage":"tr","potentialAction":[{"@type":"ReadAction","target":["https://linuxsorularim.com/arch-linux-kurulumu"]}]},{"@type":"BreadcrumbList","@id":"https://linuxsorularim.com/arch-linux-kurulumu#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://linuxsorularim.com/"},{"@type":"ListItem","position":2,"name":"Home","item":"https://linuxsorularim.com/home"},{"@type":"ListItem","position":3,"name":"Arch Linux Kurulumu"}]},{"@type":"Article","@id":"https://linuxsorularim.com/arch-linux-kurulumu#article","isPartOf":{"@id":"https://linuxsorularim.com/arch-linux-kurulumu#webpage"},"author":{"@id":"https://linuxsorularim.com/#/schema/person/86b29532e69d2b8d84a94ebc00aaf0dd"},"headline":"Arch Linux kurulumu","datePublished":"2021-05-09T07:39:16+00:00","dateModified":"2021-05-09T07:42:53+00:00","mainEntityOfPage":{"@id":"https://linuxsorularim.com/arch-linux-kurulumu#webpage"},"wordCount":607,"commentCount":0,"publisher":{"@id":"https://linuxsorularim.com/#/schema/person/86b29532e69d2b8d84a94ebc00aaf0dd"},"image":{"@id":"https://linuxsorularim.com/arch-linux-kurulumu#primaryimage"},"thumbnailUrl":"https://linuxsorularim.com/wp-content/uploads/2021/05/Screenshot-from-2021-05-09-10-28-53.png","keywords":["archlinux","base","kurulum","lfs"],"articleSection":["Rehberler"],"inLanguage":"tr","potentialAction":[{"@type":"CommentAction","name":"Comment","target":["https://linuxsorularim.com/arch-linux-kurulumu#respond"]}]},{"@type":["Person","Organization"],"@id":"https://linuxsorularim.com/#/schema/person/86b29532e69d2b8d84a94ebc00aaf0dd","name":"Berke","image":{"@type":"ImageObject","@id":"https://linuxsorularim.com/#personlogo","inLanguage":"tr","url":"https://secure.gravatar.com/avatar/48f7740ce625c3a71027c3a57440d10d?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/48f7740ce625c3a71027c3a57440d10d?s=96&d=mm&r=g","caption":"Berke"},"logo":{"@id":"https://linuxsorularim.com/#personlogo"},"sameAs":["https://linuxsorularim.com"],"url":"https://linuxsorularim.com/author/berke"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Linux Sorularım &raquo; beslemesi" href="https://linuxsorularim.com/feed" />
+<link rel="alternate" type="application/rss+xml" title="Linux Sorularım &raquo; yorum beslemesi" href="https://linuxsorularim.com/comments/feed" />
+<link rel="alternate" type="application/rss+xml" title="Linux Sorularım &raquo; Arch Linux kurulumu yorum beslemesi" href="https://linuxsorularim.com/arch-linux-kurulumu/feed" />
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/linuxsorularim.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.9.3"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://linuxsorularim.com/wp-includes/css/dist/block-library/style.min.css?ver=5.9.3' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link rel='stylesheet' id='blossomthemes-email-newsletter-css'  href='https://linuxsorularim.com/wp-content/plugins/blossomthemes-email-newsletter/public/css/blossomthemes-email-newsletter-public.min.css?ver=2.1.7' type='text/css' media='all' />
+<link rel='stylesheet' id='blossomthemes-instagram-feed-css'  href='https://linuxsorularim.com/wp-content/plugins/blossomthemes-instagram-feed/public/css/blossomthemes-instagram-feed-public.css?ver=2.0.3' type='text/css' media='all' />
+<link rel='stylesheet' id='magnific-popup-css'  href='https://linuxsorularim.com/wp-content/plugins/blossomthemes-instagram-feed/public/css/magnific-popup.min.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='blossomthemes-toolkit-css'  href='https://linuxsorularim.com/wp-content/plugins/blossomthemes-toolkit/public/css/blossomthemes-toolkit-public.min.css?ver=2.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='cbxuseronline-public-css'  href='https://linuxsorularim.com/wp-content/plugins/cbxuseronline/public/../assets/css/cbxuseronline-public.css?ver=1.2.6' type='text/css' media='all' />
+<link rel='stylesheet' id='code-snippet-dm-main-min-css'  href='https://linuxsorularim.com/wp-content/plugins/code-snippet-dm/public/css/main.min.css?ver=1.3.5' type='text/css' media='all' />
+<link rel='stylesheet' id='clipboard-css-css'  href='https://linuxsorularim.com/wp-content/plugins/copy-code-to-clipboard/css/clipboard-css.css?ver=5.9.3' type='text/css' media='all' />
+<link rel='stylesheet' id='remoji-css-css'  href='https://linuxsorularim.com/wp-content/plugins/remoji/assets/css/remoji.css?ver=2.0' type='text/css' media='all' />
+<link rel='stylesheet' id='owl-carousel-css'  href='https://linuxsorularim.com/wp-content/themes/blossom-pin/css/owl.carousel.min.css?ver=2.2.1' type='text/css' media='all' />
+<link rel='stylesheet' id='blossom-pin-google-fonts-css'  href='https://fonts.googleapis.com/css?family=Cormorant+Garamond%3A300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic' type='text/css' media='all' />
+<link rel='stylesheet' id='blossom-pin-css'  href='https://linuxsorularim.com/wp-content/themes/blossom-pin/style.css?ver=1.2.8' type='text/css' media='all' />
+<style id='blossom-pin-inline-css' type='text/css'>
+
+    
+    /*Typography*/
+
+    body,
+    button,
+    input,
+    select,
+    optgroup,
+    textarea{
+        font-family : Arial, Helvetica, sans-serif;
+        font-size   : 18px;        
+    }
+    
+    .site-header .site-branding .site-title,
+    .single-header .site-branding .site-title,
+    .mobile-header .mobile-site-header .site-branding .site-title{
+        font-family : Arial, Helvetica, sans-serif;
+        font-weight : 400;
+        font-style  : normal;
+    }
+
+    .blog #primary .format-quote .post-thumbnail blockquote cite, 
+    .newsletter-section .blossomthemes-email-newsletter-wrapper .text-holder h3,
+    .newsletter-section .blossomthemes-email-newsletter-wrapper.bg-img .text-holder h3, 
+    #primary .post .entry-content blockquote cite,
+    #primary .page .entry-content blockquote cite{
+        font-family : Arial, Helvetica, sans-serif;
+    }
+
+    .banner-slider .item .text-holder .entry-title, 
+    .banner .banner-caption .banner-title, 
+    .blog #primary .post .entry-header .entry-title, 
+    .blog #primary .format-quote .post-thumbnail .blockquote-holder, 
+    .search #primary .search-post .entry-header .entry-title,
+    .archive #primary .post .entry-header .entry-title, 
+    .single .post-entry-header .entry-title, 
+    #primary .post .entry-content blockquote,
+    #primary .page .entry-content blockquote, 
+    #primary .post .entry-content .pull-left,
+    #primary .page .entry-content .pull-left, 
+    #primary .post .entry-content .pull-right,
+    #primary .page .entry-content .pull-right, 
+    .single-header .title-holder .post-title, 
+    .recommended-post .post .entry-header .entry-title, 
+    .widget_bttk_popular_post ul li .entry-header .entry-title,
+    .widget_bttk_pro_recent_post ul li .entry-header .entry-title, 
+    .blossomthemes-email-newsletter-wrapper.bg-img .text-holder h3, 
+    .widget_recent_entries ul li a, 
+    .widget_recent_comments ul li a, 
+    .widget_bttk_posts_category_slider_widget .carousel-title .title, 
+    .single .navigation .post-title, 
+    .single-blossom-portfolio .post-navigation .nav-previous,
+    .single-blossom-portfolio .post-navigation .nav-next, 
+    .site-main .blossom-portfolio .entry-title {
+        font-family : Cormorant Garamond;
+    }
+    
+    /*Color Scheme*/
+    a, 
+    .main-navigation ul li a:hover,
+    .main-navigation ul .current-menu-item > a,
+    .main-navigation ul li:hover > a, 
+    .site-header .site-branding .site-title a:hover, 
+    .site-header .social-networks ul li a:hover, 
+    .banner-slider .item .text-holder .entry-title a:hover, 
+    .blog #primary .post .entry-header .entry-title a:hover, 
+    .blog #primary .post .entry-footer .read-more:hover, 
+    .blog #primary .post .entry-footer .edit-link a:hover, 
+    .blog #primary .post .bottom .posted-on a:hover, 
+    .newsletter-section .social-networks ul li a:hover, 
+    .instagram-section .profile-link:hover, 
+    .search #primary .search-post .entry-header .entry-title a:hover,
+     .archive #primary .post .entry-header .entry-title a:hover, 
+     .search #primary .search-post .entry-footer .posted-on a:hover,
+     .archive #primary .post .entry-footer .posted-on a:hover, 
+     .single #primary .post .holder .meta-info .entry-meta a:hover, 
+    .single-header .site-branding .site-title a:hover, 
+    .single-header .social-networks ul li a:hover, 
+    .comments-area .comment-body .text-holder .top .comment-metadata a:hover, 
+    .comments-area .comment-body .text-holder .reply a:hover, 
+    .recommended-post .post .entry-header .entry-title a:hover, 
+    .error-wrapper .error-holder h3, 
+    .widget_bttk_popular_post ul li .entry-header .entry-title a:hover,
+     .widget_bttk_pro_recent_post ul li .entry-header .entry-title a:hover, 
+     .widget_bttk_popular_post ul li .entry-header .entry-meta a:hover,
+     .widget_bttk_pro_recent_post ul li .entry-header .entry-meta a:hover,
+     .widget_bttk_popular_post .style-two li .entry-header .cat-links a:hover,
+     .widget_bttk_pro_recent_post .style-two li .entry-header .cat-links a:hover,
+     .widget_bttk_popular_post .style-three li .entry-header .cat-links a:hover,
+     .widget_bttk_pro_recent_post .style-three li .entry-header .cat-links a:hover, 
+     .widget_recent_entries ul li:before, 
+     .widget_recent_entries ul li a:hover, 
+    .widget_recent_comments ul li:before, 
+    .widget_bttk_posts_category_slider_widget .carousel-title .cat-links a:hover, 
+    .widget_bttk_posts_category_slider_widget .carousel-title .title a:hover, 
+    .site-footer .footer-b .footer-nav ul li a:hover, 
+    .single .navigation a:hover .post-title, 
+    .page-template-blossom-portfolio .portfolio-holder .portfolio-sorting .is-checked, 
+    .portfolio-item a:hover, 
+    .single-blossom-portfolio .post-navigation .nav-previous a:hover,
+     .single-blossom-portfolio .post-navigation .nav-next a:hover, 
+     .mobile-header .mobile-site-header .site-branding .site-title a:hover, 
+    .mobile-menu .main-navigation ul li:hover svg, 
+    .mobile-menu .main-navigation ul ul li a:hover,
+    .mobile-menu .main-navigation ul ul li:hover > a, 
+    .mobile-menu .social-networks ul li a:hover, 
+    .site-main .blossom-portfolio .entry-title a:hover, 
+    .site-main .blossom-portfolio .entry-footer .posted-on a:hover, 
+    .widget_bttk_social_links ul li a:hover, 
+    #crumbs a:hover, #crumbs .current a,
+    .entry-content a:hover,
+    .entry-summary a:hover,
+    .page-content a:hover,
+    .comment-content a:hover,
+    .widget .textwidget a:hover {
+        color: #6ddbd0;
+    }
+
+    .comments-area .comment-body .text-holder .reply a:hover svg {
+        fill: #6ddbd0;
+     }
+
+    button:hover,
+    input[type="button"]:hover,
+    input[type="reset"]:hover,
+    input[type="submit"]:hover, 
+    .banner-slider .item, 
+    .banner-slider .item .text-holder .category a, 
+    .banner .banner-caption .banner-link:hover, 
+    .blog #primary .post .entry-header .category a, 
+    .newsletter-section, 
+    .search #primary .search-post .entry-header .category a,
+    .archive #primary .post .entry-header .category a, 
+    .single .post-entry-header .category a, 
+    .single #primary .post .holder .meta-info .entry-meta .byline:after, 
+    .single #primary .post .entry-footer .tags a, 
+    .single-header .progress-bar, 
+    .recommended-post .post .entry-header .category a, 
+    .error-wrapper .error-holder .btn-home a:hover, 
+    .widget .widget-title:after, 
+    .widget_bttk_author_bio .readmore:hover, 
+    .widget_bttk_custom_categories ul li a:hover .post-count, 
+    .widget_blossomtheme_companion_cta_widget .text-holder .button-wrap .btn-cta, 
+    .widget_blossomtheme_featured_page_widget .text-holder .btn-readmore:hover, 
+    .widget_bttk_icon_text_widget .text-holder .btn-readmore:hover, 
+    .widget_bttk_image_text_widget ul li .btn-readmore:hover, 
+    .back-to-top, 
+    .single .post-entry-header .share .social-networks li a:hover {
+        background: #6ddbd0;
+    }
+
+    button:hover,
+    input[type="button"]:hover,
+    input[type="reset"]:hover,
+    input[type="submit"]:hover, 
+    .error-wrapper .error-holder .btn-home a:hover {
+        border-color: #6ddbd0;
+    }
+
+    .blog #primary .post .entry-footer .read-more:hover, 
+    .blog #primary .post .entry-footer .edit-link a:hover {
+        border-bottom-color: #6ddbd0;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .main-navigation ul ul li a:hover, 
+        .main-navigation ul ul li:hover > a, 
+        .main-navigation ul ul .current-menu-item > a, 
+        .main-navigation ul ul .current-menu-ancestor > a, 
+        .main-navigation ul ul .current_page_item > a, 
+        .main-navigation ul ul .current_page_ancestor > a {
+            color: #6ddbd0 !important;
+        }
+    }
+</style>
+<script type='text/javascript' src='https://linuxsorularim.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://linuxsorularim.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='https://linuxsorularim.com/wp-content/plugins/code-snippet-dm/public/js/clipboardv201.min.js?ver=1.3.5' id='code-snippet-dm-dm-clipboard-js'></script>
+<script type='text/javascript' src='https://linuxsorularim.com/wp-content/plugins/code-snippet-dm/public/js/manually-start-prism.js?ver=1.3.5' id='code-snippet-dm-dm-manually-start-prism-js'></script>
+<script type='text/javascript' src='https://linuxsorularim.com/wp-content/plugins/code-snippet-dm/public/js/prism.js?ver=1.3.5' id='code-snippet-dm-dm-prism-js'></script>
+<script type='text/javascript' src='https://linuxsorularim.com/wp-content/plugins/code-snippet-dm/public/js/code-snippet-dm-public.js?ver=1.3.5' id='code-snippet-dm-js'></script>
+<script type='text/javascript' src='https://linuxsorularim.com/wp-includes/js/clipboard.min.js?ver=5.9.3' id='clipboard-js-js'></script>
+<script type='text/javascript' id='copy_code_script-js-extra'>
+/* <![CDATA[ */
+var copyScript = {"copy_text_label":"Kopyala","copied_text_label":"Kopyaland\u0131","copy_text_label_safari":"Kopyala","copy_text_label_other_browser":"Kopyala","copy_button_background":"","copy_button_text_color":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://linuxsorularim.com/wp-content/plugins/copy-code-to-clipboard/js/copy_code_script.js?ver=5.9.3' id='copy_code_script-js'></script>
+<script type='text/javascript' src='https://linuxsorularim.com/wp-content/plugins/ionos-assistant/js/cookies.js?ver=5.9.3' id='ionos-assistant-wp-cookies-js'></script>
+<script type='text/javascript' id='remoji-js-js-extra'>
+/* <![CDATA[ */
+var remoji = {"show_reaction_panel_url":"https:\/\/linuxsorularim.com\/wp-json\/remoji\/v1\/show_reaction_panel","reaction_submit_url":"https:\/\/linuxsorularim.com\/wp-json\/remoji\/v1\/add","nonce":"2d3cafa6c2"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://linuxsorularim.com/wp-content/plugins/remoji/assets/remoji.js?ver=2.0' id='remoji-js-js'></script>
+<link rel="https://api.w.org/" href="https://linuxsorularim.com/wp-json/" /><link rel="alternate" type="application/json" href="https://linuxsorularim.com/wp-json/wp/v2/posts/76" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://linuxsorularim.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://linuxsorularim.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.9.3" />
+<link rel='shortlink' href='https://linuxsorularim.com/?p=76' />
+<link rel="alternate" type="application/json+oembed" href="https://linuxsorularim.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Flinuxsorularim.com%2Farch-linux-kurulumu" />
+<link rel="alternate" type="text/xml+oembed" href="https://linuxsorularim.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Flinuxsorularim.com%2Farch-linux-kurulumu&#038;format=xml" />
+		<script type="text/javascript">
+            var _tmip=_tmip || [];
+            _tmip.push({"tags": {"author": "Berke"}});
+        </script>
+	   <link rel="pingback" href="https://linuxsorularim.com/xmlrpc.php"><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "Blog",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://linuxsorularim.com/arch-linux-kurulumu"
+    },
+    "headline": "Arch Linux kurulumu",
+    "datePublished": "2021-05-09T10:39:16+0300",
+    "dateModified": "2021-05-09T10:42:53+0300",
+    "author": {
+        "@type": "Person",
+        "name": "Berke"
+    },
+    "description": "",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://linuxsorularim.com/wp-content/uploads/2021/05/Screenshot-from-2021-05-09-10-28-53.png",
+        "width": 1920,
+        "height": 1080
+    }
+}</script><style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e0e0e0; }
+</style>
+	<link rel="icon" href="https://linuxsorularim.com/wp-content/uploads/2021/05/cropped-220px-NewTux-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://linuxsorularim.com/wp-content/uploads/2021/05/cropped-220px-NewTux-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://linuxsorularim.com/wp-content/uploads/2021/05/cropped-220px-NewTux-180x180.png" />
+<meta name="msapplication-TileImage" content="https://linuxsorularim.com/wp-content/uploads/2021/05/cropped-220px-NewTux-270x270.png" />
+		<style type="text/css" id="wp-custom-css">
+			.menu {
+	float: right;
+}
+		</style>
+		</head>
+
+<body class="post-template-default single single-post postid-76 single-format-standard custom-background custom-background-color underline rightsidebar hassidebar" itemscope itemtype="http://schema.org/WebPage">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg>        <div class="single-header">
+                    <div class="site-branding" itemscope itemtype="http://schema.org/Organization">
+                                    <p class="site-title" itemprop="name"><a href="https://linuxsorularim.com/" rel="home" itemprop="url">Linux Sorularım</a></p>
+                                            <p class="site-description">GNU/Linux hakkında her şey.</p>
+                            </div>
+                <div class="title-holder">
+                <span>Okuyorsunuz</span>
+                <h2 class="post-title">Arch Linux kurulumu</h2>
+            </div>
+                        <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
+            </div>
+        </div>
+            <div id="page" class="site"><a aria-label="içeriğe geç" class="skip-link" href="#content">İçeriğe geç</a>
+        <div class="mobile-header">
+        <div class="mobile-site-header">
+            <button aria-label="birincil menü aç/kapat" id="toggle-button" data-toggle-target=".main-menu-modal" data-toggle-body-class="showing-main-menu-modal" aria-expanded="false" data-set-focus=".close-main-nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="mobile-menu-wrap">
+                <nav id="mobile-site-navigation" class="main-navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                    <div class="primary-menu-list main-menu-modal cover-modal" data-modal-target-string=".main-menu-modal">
+                        <button class="btn-close-menu close-main-nav-toggle" data-toggle-target=".main-menu-modal" data-toggle-body-class="showing-main-menu-modal" aria-expanded="false" data-set-focus=".main-menu-modal"><span></span></button>
+                        <div class="mobile-menu" aria-label="Mobil">
+                            <div class="menu-linux-disii-container"><ul id="mobile-primary-menu" class="menu main-menu-modal"><li id="menu-item-28" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28"><a href="#">Masaüstü Ortamları</a></li>
+<li id="menu-item-30" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-30"><a href="https://linuxsorularim.com/category/linux-disi">Linux Dışı</a>
+<ul class="sub-menu">
+	<li id="menu-item-21" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21"><a href="https://linuxsorularim.com/teknoloji-haberleri">Teknoloji haberleri</a></li>
+</ul>
+</li>
+<li id="menu-item-34" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-34"><a href="https://linuxsorularim.com/category/dagitim-tavsiyeleri">Dağıtım Tavsiyeleri</a></li>
+</ul></div>                        </div>
+                    </div>
+                </nav> 
+                
+                            </div>
+                    <div class="site-branding" itemscope itemtype="http://schema.org/Organization">
+                                    <p class="site-title" itemprop="name"><a href="https://linuxsorularim.com/" rel="home" itemprop="url">Linux Sorularım</a></p>
+                                            <p class="site-description">GNU/Linux hakkında her şey.</p>
+                            </div>
+                <div class="tools">
+                                    <div class=header-search>
+                        <button aria-label="Arama formu aç/kapa " class="search-icon search-toggle" data-toggle-target=".mob-search-modal" data-toggle-body-class="showing-mob-search-modal" data-set-focus=".mob-search-modal .search-field" aria-expanded="false">
+                            <svg class="open-icon" xmlns="http://www.w3.org/2000/svg" viewBox="-18214 -12091 18 18"><path id="Path_99" data-name="Path 99" d="M18,16.415l-3.736-3.736a7.751,7.751,0,0,0,1.585-4.755A7.876,7.876,0,0,0,7.925,0,7.876,7.876,0,0,0,0,7.925a7.876,7.876,0,0,0,7.925,7.925,7.751,7.751,0,0,0,4.755-1.585L16.415,18ZM2.264,7.925a5.605,5.605,0,0,1,5.66-5.66,5.605,5.605,0,0,1,5.66,5.66,5.605,5.605,0,0,1-5.66,5.66A5.605,5.605,0,0,1,2.264,7.925Z" transform="translate(-18214 -12091)"/></svg>
+                        </button>
+                        <div class="search-form-holder mob-search-modal cover-modal" data-modal-target-string=".mob-search-modal">
+                            <div class="header-search-inner-wrap">
+                                <form role="search" method="get" class="search-form" action="https://linuxsorularim.com/"><label class="screen-reader-text">Bir şey mi arıyorsunuz?</label><label for="submit-field"><span>İstediğini ara ve enter tuşuna bas</span><input type="search" class="search-field" placeholder="Ne arıyorsunuz..." value="" name="s" /></label><input type="submit" class="search-submit" value="Ara" /></form> 
+                                <button aria-label="Arama formu aç/kapa " class="search-icon close" data-toggle-target=".mob-search-modal" data-toggle-body-class="showing-mob-search-modal" data-set-focus=".mob-search-modal .search-field" aria-expanded="false">
+                                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="10906 13031 18 18"><path id="Close" d="M23,6.813,21.187,5,14,12.187,6.813,5,5,6.813,12.187,14,5,21.187,6.813,23,14,15.813,21.187,23,23,21.187,15.813,14Z" transform="translate(10901 13026)"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="overlay"></div>
+                    </div>
+                            </div>
+        </div>
+    </div>
+        <header class="site-header" itemscope itemtype="http://schema.org/WPHeader">
+		        <div class="site-branding" itemscope itemtype="http://schema.org/Organization">
+                                    <p class="site-title" itemprop="name"><a href="https://linuxsorularim.com/" rel="home" itemprop="url">Linux Sorularım</a></p>
+                                            <p class="site-description">GNU/Linux hakkında her şey.</p>
+                            </div>
+            <nav id="site-navigation" class="main-navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <div class="menu-linux-disii-container"><ul id="primary-menu" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28"><a href="#">Masaüstü Ortamları</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-30"><a href="https://linuxsorularim.com/category/linux-disi">Linux Dışı</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21"><a href="https://linuxsorularim.com/teknoloji-haberleri">Teknoloji haberleri</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-34"><a href="https://linuxsorularim.com/category/dagitim-tavsiyeleri">Dağıtım Tavsiyeleri</a></li>
+</ul></div>        </nav><!-- #site-navigation -->						
+		<div class="tools">
+                            <div class=header-search>
+                    <button aria-label="Arama formu aç/kapa " class="search-icon search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
+                        <svg class="open-icon" xmlns="http://www.w3.org/2000/svg" viewBox="-18214 -12091 18 18"><path id="Path_99" data-name="Path 99" d="M18,16.415l-3.736-3.736a7.751,7.751,0,0,0,1.585-4.755A7.876,7.876,0,0,0,7.925,0,7.876,7.876,0,0,0,0,7.925a7.876,7.876,0,0,0,7.925,7.925,7.751,7.751,0,0,0,4.755-1.585L16.415,18ZM2.264,7.925a5.605,5.605,0,0,1,5.66-5.66,5.605,5.605,0,0,1,5.66,5.66,5.605,5.605,0,0,1-5.66,5.66A5.605,5.605,0,0,1,2.264,7.925Z" transform="translate(-18214 -12091)"/></svg>
+                    </button>
+                    <div class="search-form-holder search-modal cover-modal" data-modal-target-string=".search-modal">
+                        <div class="header-search-inner-wrap">
+                            <form role="search" method="get" class="search-form" action="https://linuxsorularim.com/"><label class="screen-reader-text">Bir şey mi arıyorsunuz?</label><label for="submit-field"><span>İstediğini ara ve enter tuşuna bas</span><input type="search" class="search-field" placeholder="Ne arıyorsunuz..." value="" name="s" /></label><input type="submit" class="search-submit" value="Ara" /></form> 
+                            <button aria-label="Arama formu aç/kapa " class="search-icon close" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
+                                <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="10906 13031 18 18"><path id="Close" d="M23,6.813,21.187,5,14,12.187,6.813,5,5,6.813,12.187,14,5,21.187,6.813,23,14,15.813,21.187,23,23,21.187,15.813,14Z" transform="translate(10901 13026)"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="overlay"></div>
+                </div>
+					</div>
+	</header>
+    <div class="breadcrumb-wrapper"><div class="container">
+                <div id="crumbs" itemscope itemtype="http://schema.org/BreadcrumbList"> 
+                    <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                        <a itemprop="item" href="https://linuxsorularim.com"><span itemprop="name">Ana sayfa</span></a>
+                        <meta itemprop="position" content="1" />
+                        <span class="separator"><i class="fa fa-angle-right"></i></span>
+                    </span> <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="https://linuxsorularim.com/home" itemprop="item"><span itemprop="name">Home </span></a><meta itemprop="position" content="2" /><span class="separator"><i class="fa fa-angle-right"></i></span></span>  <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="https://linuxsorularim.com/category/gnu-linux"><span itemprop="name">GNU/Linux </span></a><meta itemprop="position" content="3" /><span class="separator"><i class="fa fa-angle-right"></i></span></span>  <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="https://linuxsorularim.com/category/gnu-linux/rehberler"><span itemprop="name">Rehberler </span></a><meta itemprop="position" content="4" /><span class="separator"><i class="fa fa-angle-right"></i></span></span> <span class="current" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="https://linuxsorularim.com/arch-linux-kurulumu"><span itemprop="name">Arch Linux kurulumu</span></a><meta itemprop="position" content="5" /></span></div></div></div><!-- .breadcrumb-wrapper -->        <div id="content" class="site-content">   
+            <div class="container">
+                <div id="primary" class="content-area">
+                        <header class="post-entry-header">
+                <span class="category" itemprop="about"><a href="https://linuxsorularim.com/category/gnu-linux/rehberler" rel="category tag">Rehberler</a></span>                <h1 class="entry-title">Arch Linux kurulumu</h1>                
+            </header>
+        
+		<main id="main" class="site-main">
+
+		
+<article id="post-76" class="post-76 post type-post status-publish format-standard has-post-thumbnail hentry category-rehberler tag-archlinux tag-base tag-kurulum tag-lfs latest_post">
+   <div class="holder">
+
+                <div class="meta-info">
+            <div class="entry-meta">               
+                <span class="byline" itemprop="author" itemscope itemtype="https://schema.org/Person">Geliştirici <span itemprop="name"><a class="url fn n" href="https://linuxsorularim.com/author/berke" itemprop="url">Berke</a></span></span><span class="posted-on"><a href="https://linuxsorularim.com/arch-linux-kurulumu" rel="bookmark"><time class="entry-date published updated" datetime="2021-05-09T10:42:53+03:00" itemprop="dateModified">Mayıs 9, 2021</time><time class="updated" datetime="2021-05-09T10:39:16+03:00" itemprop="datePublished">Mayıs 9, 2021</time></a></span><span class="comments"><a href="https://linuxsorularim.com/arch-linux-kurulumu#respond"><span class="screen-reader-text">Arch Linux kurulumu için</span> bir yorum yapın </a></span>            </div>
+        </div>
+        
+
+        <div class="post-content">
+        <div class="post-thumbnail"><img width="1920" height="1080" src="https://linuxsorularim.com/wp-content/uploads/2021/05/Screenshot-from-2021-05-09-10-28-53.png" class="attachment-full size-full wp-post-image" alt="" itemprop="image" srcset="https://linuxsorularim.com/wp-content/uploads/2021/05/Screenshot-from-2021-05-09-10-28-53.png 1920w, https://linuxsorularim.com/wp-content/uploads/2021/05/Screenshot-from-2021-05-09-10-28-53-300x169.png 300w, https://linuxsorularim.com/wp-content/uploads/2021/05/Screenshot-from-2021-05-09-10-28-53-1024x576.png 1024w, https://linuxsorularim.com/wp-content/uploads/2021/05/Screenshot-from-2021-05-09-10-28-53-768x432.png 768w, https://linuxsorularim.com/wp-content/uploads/2021/05/Screenshot-from-2021-05-09-10-28-53-1536x864.png 1536w, https://linuxsorularim.com/wp-content/uploads/2021/05/Screenshot-from-2021-05-09-10-28-53-107x60.png 107w" sizes="(max-width: 1920px) 100vw, 1920px" /></div>    <div class="entry-content" itemprop="text">
+		
+<p>Arch, tty ekranından kurulumu yapılan bir dağıtımdır. Calameres kurucusunun yaptıklarını terminalden yapıyoruz aslında. Arayüz ile kurulum yapacaksanız archinstall komutunu da kullanabilirsiniz. </p>
+
+
+
+<h2>Disk bölümleme</h2>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<p>Disk bölümlemek için fdisk, gdisk, cfdisk gibi araçlar kullanabilirsiniz. Ben kullanıcı arayüzü olduğu için cfdisk tavsiye ediyorum. MBR diskler için sadece kök bölümü oluşturmanız yeterli. UEFI kurulumda EFI ile kök bölümünü ayırmanız gerek. Kuruluma başlar başlamaz <code>loadkeys trq</code> komutuyla klavyenizi ayarlayın.</p>
+
+
+
+<h4>Bölümlendirme tablosu oluşturma</h4>
+
+
+
+<pre class="wp-block-code"><code>parted /dev/sdX</code></pre>
+
+
+
+<p>Komutunu girerek kurulum yapacağınız diskte parted açın. Parted açıldıktan sonra <code>mklabel msdos</code> komutuyla MBR yazdırın ya da UEFI kurulum yapacaksanız gpt yazdırın. </p>
+
+
+
+<h4>Diskte bölüm açma</h4>
+
+
+
+<p><code>cfdisk /dev/sdX</code> komutunu girip cfdiski açın. Cfdisk açıldıktan sonra UEFI kurulum yapacaksanız 2 tane, Legacy kurulum yapacaksanız 1 tane bölüm açın. Write butonuna basıp çıkın.</p>
+
+
+
+<h4>Bölümlere dosya sistemi yazdırma</h4>
+
+
+
+<p><code>mkfs</code> komutuyla bölüm üzerine dosya sistemi yazdırabilirsiniz. Kök bölümüne <code>mkfs.ext4 </code>/dev/sdXX komutuyla ext4 dosya sistemini yazdırın. UEFI kurulum yapıyorsanız <code>mkfs.fat -F32</code> komutuyla FAT32 dosya sistemini yazdırın. </p>
+
+
+
+<h4>Bölümleri bağlama</h4>
+
+
+
+<pre class="wp-block-code"><code># mount /dev/sd&lt;kök bölümü&gt; /mnt</code></pre>
+
+
+
+<pre class="wp-block-code"><code># mkdir /mnt/boot
+# mount /dev/&lt;EFI bölümü&gt; /mnt/boot</code></pre>
+
+
+
+<h2>İnternete bağlanma</h2>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<p>iwctl aracını kullanarak internete bağlanabilirsiniz. <code>iwctl</code> komutunu girip iwctli açın. Açıldıktan sonra <code>station list</code> komutuyla ağ bağdaştırıcılarını listeleyin. Mesela ağ bağdaştırıcınız wlan0 ise <code>station wlan0 connect &lt;SSID&gt;</code> komutuyla ağınıza bağlanabilirsiniz. Bağlandıktan sonra CTRL+C kombinasyonuyla çıkın. Kablolu bağlantılarda otomatik olarak bağlanır. </p>
+
+
+
+<h2>Ana sistemin kurulumu </h2>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<pre class="wp-block-code"><code>pacstrap /mnt base linux linux-firmware nano</code></pre>
+
+
+
+<p>komutuyla sistemi kurun. Kurulduktan sonra chroot ile o sisteme geçin. </p>
+
+
+
+<pre class="wp-block-code"><code>genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</code></pre>
+
+
+
+<pre class="wp-block-code"><code>arch-chroot /mnt</code></pre>
+
+
+
+<p>Chroota geçtiğinizde shell promptunun değiştiğini göreceksiniz. </p>
+
+
+
+<h2>Zaman diliminin ayarlanması</h2>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<pre class="wp-block-code"><code># ln -sf /usr/share/zoneinfo/Europe/Istanbul /etc/localtime
+# hwclock --systohc</code></pre>
+
+
+
+<h2>Dilin ayarlanması</h2>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<p>Dil olarak İngilizce seçmenizi tavsiye ederim. nano <code>/etc/locale.gen</code> komutuyla locale dosyasını açın ve <code>en_US.UTF-8 UTF-8</code> satırının başındaki # işaretini kaldırın. Ardından<code> locale-gen</code> komutunu girin. </p>
+
+
+
+<pre class="wp-block-code"><code>nano /etc/locale.conf</code></pre>
+
+
+
+<p>komutuyla  locale.conf dosyasını açıp içine LANG=en_US.UTF-8 yazıp kaydedip çıkın.</p>
+
+
+
+<h2>Ağ konfigürasyonu</h2>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<p>nano /etc/hostname komutuyla hostname dosyasını açın. Dosyanın içine kullanıcı adınızı yazın. Ardınan nano /etc/hosts komutuyla hosts dosyasını açıp içine bunu yapıştırın. kullaniciadi yazan kısmı kullanıcı adınızla değiştirin.</p>
+
+
+
+<pre class="wp-block-code"><code>127.0.0.1	localhost
+::1		localhost
+127.0.1.1	kullaniciadi.localdomain	kullaniciadi
+
+# pacman -Sy networkmanager
+# systemctl enable NetworkManager</code></pre>
+
+
+
+<h2>Kullanıcı oluşturma</h2>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<p>useradd komutuyla kullanıcı oluşturabilirsiniz. Bu komutu bu şekilde kullanacaksınız: </p>
+
+
+
+<pre class="wp-block-code"><code>useradd -m -g users -G wheel,storage,power -s /bin/bash kullanıcıadi</code></pre>
+
+
+
+<p>Şifresini belirlemek için: </p>
+
+
+
+<pre class="wp-block-code"><code># passwd kullaniciadi
+# passwd //Kök kullanıcı şifresi için. </code></pre>
+
+
+
+<h2>Kullanıcıya sudo kullanma yetkisi verme</h2>
+
+
+
+<p>Önce pacman -Sy sudo komutuyla sudoyu kurun. Kurduktan sonra sudoers dosyasını nano ile açın: </p>
+
+
+
+<pre class="wp-block-code"><code>EDITOR=nano visudo
+Açıldıktan sonra "%wheel ALL=(ALL) ALL" satırının başındaki # işaretini kaldırın ve dosyanın sonuna "Defaults rootpw" yazın. </code></pre>
+
+
+
+<h2>Önyükleyici kurma</h2>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<p>Önyükleyici olarak GRUB kuracağım. GRUB kurarken eğer Legacy sisteminize kuruyorsanız bu komutları girmelisiniz: </p>
+
+
+
+<pre class="wp-block-code"><code># pacman -S grub efibootmgr
+# grub-install /dev/sdX</code></pre>
+
+
+
+<p>UEFI sisteme kurarken bu komutları girmelisiniz: </p>
+
+
+
+<pre class="wp-block-code"><code># pacman -S grub efibootmgr
+# grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB</code></pre>
+
+
+
+<h4>GRUB config dosyası oluşturma</h4>
+
+
+
+<pre class="wp-block-code"><code>grub-mkconfig -o /boot/grub/grub.cfg</code></pre>
+
+
+
+<h2>Yeniden başlatma</h2>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<p>Bu adımlardan sonra temel sistem kurulmuş olacaktır. Yeniden başlatıp kurulumun sorunsuz bitip bitmediğine bakalım. Sorunsuz bittiyse sizi tty ekranı karşılayacaktır.</p>
+
+
+
+<pre class="wp-block-code"><code># exit 
+# umount -R /mnt
+# reboot</code></pre>
+
+
+
+<h2>Masaüstü ortamı/Pencere yöneticisi kurulumu</h2>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<pre class="wp-block-code"><code>pacman -S xorg-server xorg-apps xorg-xinit xorg-twm xorg-xclock</code></pre>
+
+
+
+<p>komutuyla Xorg&#8217;u kurun. İnternete bağlı değilseniz nmtui komutuyla bağlanın. </p>
+
+
+
+<p>i3 kurulumu: <code>sudo pacman -Syu i3-wm </code>komutu i3 ile ilgili gerekli paketleri kurar. Pencere yöneticileri için giriş yöneticisi olarak ly kullanmanızı tavsiye ederim.</p>
+
+
+
+<p>bspwm kurulumu: <code>sudo pacman -Syu bspwm </code></p>
+
+
+
+<p>MATE kurulumu: <code>sudo pacman -Sy pacman mate mate-extra lightdm</code>  </p>
+
+
+
+<p>Cinnamon kurulumu: <code>sudo pacman -Sy cinnamon gnome-terminal lightdm</code></p>
+
+
+
+<p>KDE kurulumu: <code>sudo pacman -Syu plasma dolphin konsole sddm</code></p>
+
+
+
+<p>GNOME kurulumu: <code>sudo pacman -Syu gnome gdm</code></p>
+
+
+
+<h4>Giriş yöneticilerini aktif etme </h4>
+
+
+
+<p>Aşağıdaki komutlara göre indirdiğiniz pencere yöneticisini aktif edebilirsiniz. </p>
+
+
+
+<pre class="wp-block-code"><code># sudo systemctl enable lightdm
+# sudo systemctl enable gdm
+# sudo systemctl enable sddm</code></pre>
+
+
+
+<p>Ve soununda Arch kurulmuş olacak. </p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" width="1024" height="576" src="https://linuxsorularim.com/wp-content/uploads/2021/05/Screenshot-from-2021-05-09-10-28-53-1024x576.png" alt="" class="wp-image-86" srcset="https://linuxsorularim.com/wp-content/uploads/2021/05/Screenshot-from-2021-05-09-10-28-53-1024x576.png 1024w, https://linuxsorularim.com/wp-content/uploads/2021/05/Screenshot-from-2021-05-09-10-28-53-300x169.png 300w, https://linuxsorularim.com/wp-content/uploads/2021/05/Screenshot-from-2021-05-09-10-28-53-768x432.png 768w, https://linuxsorularim.com/wp-content/uploads/2021/05/Screenshot-from-2021-05-09-10-28-53-1536x864.png 1536w, https://linuxsorularim.com/wp-content/uploads/2021/05/Screenshot-from-2021-05-09-10-28-53-107x60.png 107w, https://linuxsorularim.com/wp-content/uploads/2021/05/Screenshot-from-2021-05-09-10-28-53.png 1920w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h2>Font kurulumu</h2>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<p>Bu komutla bazı fontları kurabilirsiniz: </p>
+
+
+
+<pre class="wp-block-code"><code>sudo pacman -Sy font-bh-ttf gnu-free-fonts noto-fonts sdl2_ttf ttf-bitstream-vera ttf-caladea ttf-carlito ttf-croscore ttf-dejavu birdfont mftrace opendesktop-fonts perl-font-ttf sdl_ttf ttf-anonymous-pro ttf-arphic-ukai ttf-baekmuk ttf-cascadia-code ttf-cormorant ttf-eurof ttf-fantasque-sans-mono ttf-fira-code ttf-fira-mono ttf-fira-sans ttf-font-awesome ttf-hanazono ttf-hannom ttf-ibm-plex ttf-inconsolata ttf-indic-otf ttf-ionicons ttf-jetbrains-mono ttf-joypixels ttf-junicode ttf-khmer ttf-lato ttf-liberation ttf-linux-libertine ttf-linux-libertine-g ttf-monofur ttf-nerd-fonts-symbols ttf-opensans ttf-proggy-clean ttf-roboto ttf-roboto-mono ttf-sarasa-gothic ttf-sazanami ttf-tibetan-machine</code></pre>
+<div class="remoji_bar"><div class="remoji_add_container" data-remoji-id="76" data-remoji-type="post"><div class="remoji_add_icon"></div></div><div class="remoji_error_bar" data-remoji-id="76" data-remoji-type="post" style="display: none;">Error happened.</div></div>	</div><!-- .entry-content -->
+    	<footer class="entry-footer">
+		<div class="tags" itemprop="about"><span>Etiket</span>  <a href="https://linuxsorularim.com/tag/archlinux" rel="tag">archlinux</a><a href="https://linuxsorularim.com/tag/base" rel="tag">base</a><a href="https://linuxsorularim.com/tag/kurulum" rel="tag">kurulum</a><a href="https://linuxsorularim.com/tag/lfs" rel="tag">lfs</a></div>	</footer><!-- .entry-footer -->
+
+     
+        </div> <!-- .post-content -->          
+    </div> <!-- .holder -->
+</article><!-- #post-76 -->
+		</main><!-- #main -->
+        
+                    
+            <nav class="navigation" role="navigation">
+    			<h2 class="screen-reader-text">Yazı dolaşımı</h2>
+    			<div class="nav-links">
+    				<div class="nav-previous nav-holder"><a href="https://linuxsorularim.com/linuxta-shell-degistirme" rel="prev"><span class="meta-nav">Önceki makale</span><span class="post-title">Linux&#8217;ta Shell Değiştirme</span></a></div><div class="nav-next nav-holder"><a href="https://linuxsorularim.com/balena-etcherin-depolama-birimlerini-algilamama-sorunu" rel="next"><span class="meta-nav">Sonraki makale</span><span class="post-title">Balena Etcher&#8217;in depolama birimlerini algılamama sorunu</span></a></div>    			</div>
+    		</nav>        
+                    
+	</div><!-- #primary -->
+
+    
+<aside id="secondary" class="widget-area" itemscope itemtype="http://schema.org/WPSideBar">
+	<section id="bttk_popular_post-5" class="widget widget_bttk_popular_post"><h2 class="widget-title" itemprop="name">Dikkat Çeken Yazılar</h2>            <ul class="style-one">
+                                    <li>
+                                                    <a target="_self" href="https://linuxsorularim.com/gnome-masaustu-ortamini-ozellestirin" class="post-thumbnail">
+                                <img width="330" height="190" src="https://linuxsorularim.com/wp-content/uploads/2021/05/ozellestirilmis-gnome-330x190.png" class="attachment-post-slider-thumb-size size-post-slider-thumb-size wp-post-image" alt="" loading="lazy" itemprop="image" />                            </a>
+                                                <div class="entry-header">
+                            <span class="cat-links"><a target="_self" href="https://linuxsorularim.com/category/masaustu-ortami-ozellestirme" alt="Masaüstü ortamı özelleştirme içindeki tüm gönderileri görüntüle">Masaüstü ortamı özelleştirme</a></span>                            <h3 class="entry-title"><a target="_self" href="https://linuxsorularim.com/gnome-masaustu-ortamini-ozellestirin">GNOME masaüstü ortamını özelleştirin</a></h3>
+
+                                                            <div class="entry-meta"> 
+                                    <span class="posted-on"><a href="https://linuxsorularim.com/gnome-masaustu-ortamini-ozellestirin" rel="bookmark"><time class="entry-date published updated" datetime="2021-05-05T14:29:06+03:00">Mayıs 5, 2021</time></a></span>                                </div>
+                                                    </div>                        
+                    </li>        
+                                    <li>
+                                                    <a target="_self" href="https://linuxsorularim.com/arch-linux-kurulumu" class="post-thumbnail">
+                                <img width="330" height="190" src="https://linuxsorularim.com/wp-content/uploads/2021/05/Screenshot-from-2021-05-09-10-28-53-330x190.png" class="attachment-post-slider-thumb-size size-post-slider-thumb-size wp-post-image" alt="" loading="lazy" itemprop="image" />                            </a>
+                                                <div class="entry-header">
+                            <span class="cat-links"><a target="_self" href="https://linuxsorularim.com/category/gnu-linux/rehberler" alt="Rehberler içindeki tüm gönderileri görüntüle">Rehberler</a></span>                            <h3 class="entry-title"><a target="_self" href="https://linuxsorularim.com/arch-linux-kurulumu">Arch Linux kurulumu</a></h3>
+
+                                                            <div class="entry-meta"> 
+                                    <span class="posted-on"><a href="https://linuxsorularim.com/arch-linux-kurulumu" rel="bookmark"><time class="entry-date published updated" datetime="2021-05-09T10:39:16+03:00">Mayıs 9, 2021</time></a></span>                                </div>
+                                                    </div>                        
+                    </li>        
+                                    <li>
+                                                    <a target="_self" href="https://linuxsorularim.com/onyukleme-ekranini-refind-ile-ozellestirin" class="post-thumbnail">
+                                <img width="330" height="190" src="https://linuxsorularim.com/wp-content/uploads/2021/05/refind-330x190.png" class="attachment-post-slider-thumb-size size-post-slider-thumb-size wp-post-image" alt="" loading="lazy" itemprop="image" />                            </a>
+                                                <div class="entry-header">
+                            <span class="cat-links"><a target="_self" href="https://linuxsorularim.com/category/gnu-linux/rehberler" alt="Rehberler içindeki tüm gönderileri görüntüle">Rehberler</a></span>                            <h3 class="entry-title"><a target="_self" href="https://linuxsorularim.com/onyukleme-ekranini-refind-ile-ozellestirin">Önyükleme ekranını rEFInd ile özelleştirin</a></h3>
+
+                                                            <div class="entry-meta"> 
+                                    <span class="posted-on"><a href="https://linuxsorularim.com/onyukleme-ekranini-refind-ile-ozellestirin" rel="bookmark"><time class="entry-date published updated" datetime="2021-05-15T00:14:16+03:00">Mayıs 15, 2021</time></a></span>                                </div>
+                                                    </div>                        
+                    </li>        
+                            </ul>
+            </section><section id="cbxuseronline-3" class="widget cbxuseronline-class"><h2 class="widget-title" itemprop="name">Aktif kullanıcılar</h2><div class="cbxuseronline cbxuseronline_widget"><p class="cbxuseronline_total_count">Total <strong>2</strong> users including <strong>0</strong> member, <strong>2</strong> guests, <strong>0</strong> bot online</p><p class="cbxuseronline_most_userinfo">Most users ever online were <strong>332</strong>, on Aralık 11, 2021 @ 12:12 pm</p></div></section><section id="btif_instagram_widget-3" class="widget widget_btif_instagram_widget"><h2 class="widget-title" itemprop="name">Instagram</h2>
+<!-- This file should primarily consist of HTML with a little bit of PHP. -->
+<ul class="popup-gallery photos-3">
+    <li>
+                <a href="https://scontent.cdninstagram.com/v/t51.29350-15/184345714_1148271515618703_80238658688416460_n.jpg?_nc_cat=101&#038;ccb=1-5&#038;_nc_sid=8ae9d6&#038;_nc_ohc=4gyE-k6FwzMAX_AGhVm&#038;_nc_ht=scontent.cdninstagram.com&#038;edm=ANo9K5cEAAAA&#038;oh=00_AT84EvMXzNzgRLezcy7SHTzt9LSi8yb4qNi3fINYZoES8A&#038;oe=62661CCD">
+                            <img src="https://scontent.cdninstagram.com/v/t51.29350-15/184345714_1148271515618703_80238658688416460_n.jpg?_nc_cat=101&#038;ccb=1-5&#038;_nc_sid=8ae9d6&#038;_nc_ohc=4gyE-k6FwzMAX_AGhVm&#038;_nc_ht=scontent.cdninstagram.com&#038;edm=ANo9K5cEAAAA&#038;oh=00_AT84EvMXzNzgRLezcy7SHTzt9LSi8yb4qNi3fINYZoES8A&#038;oe=62661CCD" 
+                    alt="Terminali verimli kullanın
+
+Bu yazıdaki yöntemler tüm UN*X işletim sistemleri için geçerlidir. Bu yazıdaki yöntemler sayesinde... Devamını oku: https://linuxsorularim.com/terminali-verimli-kullanin
+
+#terminal #shell #linux">
+                    </a>
+            </li>
+    <li>
+                <a href="https://scontent.cdninstagram.com/v/t51.29350-15/183170284_140968731394048_5682607420125530637_n.jpg?_nc_cat=101&#038;ccb=1-5&#038;_nc_sid=8ae9d6&#038;_nc_ohc=PHPGsOH1Gg8AX93sMUB&#038;_nc_oc=AQlCqLg6rZwjzmjuh8acXo4p-E5PL84g47AGWG0dmSHeOaV1cSxiJIVrXQ7rY-oLdbE&#038;_nc_ht=scontent.cdninstagram.com&#038;edm=ANo9K5cEAAAA&#038;oh=00_AT9ZMIbQ4QQIT61PwzpWHOPmB44-MHji1KZPZoe17-rQoQ&#038;oe=62657025">
+                            <img src="https://scontent.cdninstagram.com/v/t51.29350-15/183170284_140968731394048_5682607420125530637_n.jpg?_nc_cat=101&#038;ccb=1-5&#038;_nc_sid=8ae9d6&#038;_nc_ohc=PHPGsOH1Gg8AX93sMUB&#038;_nc_oc=AQlCqLg6rZwjzmjuh8acXo4p-E5PL84g47AGWG0dmSHeOaV1cSxiJIVrXQ7rY-oLdbE&#038;_nc_ht=scontent.cdninstagram.com&#038;edm=ANo9K5cEAAAA&#038;oh=00_AT9ZMIbQ4QQIT61PwzpWHOPmB44-MHji1KZPZoe17-rQoQ&#038;oe=62657025" 
+                    alt="Balena Etcher’in depolama birimlerini algılamama sorunu
+
+Balena Etcher’i Linux’ta kurduğunuzda depolama biriminizi görmeyebilir. Bunun sebebi gerekli izinleri vermemeniz... Devamını oku: https://linuxsorularim.com/balena-etcherin-depolama-birimlerini-algilamama-sorunu
+
+#balenaetcher #linux  #linuxturkiye">
+                    </a>
+            </li>
+    <li>
+                <a href="https://scontent.cdninstagram.com/v/t51.29350-15/184140316_212805937340452_7617680167044289519_n.jpg?_nc_cat=108&#038;ccb=1-5&#038;_nc_sid=8ae9d6&#038;_nc_ohc=n8_4UizUYOIAX9a5MCb&#038;_nc_ht=scontent.cdninstagram.com&#038;edm=ANo9K5cEAAAA&#038;oh=00_AT_5vZofMnAdNezvhAURRG0BOYzXIze0dGqbPA45zKT2-w&#038;oe=6265298F">
+                            <img src="https://scontent.cdninstagram.com/v/t51.29350-15/184140316_212805937340452_7617680167044289519_n.jpg?_nc_cat=108&#038;ccb=1-5&#038;_nc_sid=8ae9d6&#038;_nc_ohc=n8_4UizUYOIAX9a5MCb&#038;_nc_ht=scontent.cdninstagram.com&#038;edm=ANo9K5cEAAAA&#038;oh=00_AT_5vZofMnAdNezvhAURRG0BOYzXIze0dGqbPA45zKT2-w&#038;oe=6265298F" 
+                    alt="Arch Linux kurulumu
+
+Arch, tty ekranından kurulumu yapılan bir dağıtımdır. Calameres kurucusunun yaptıklarını terminalden yapıyoruz aslında... Devamını oku: https://linuxsorularim.com/arch-linux-kurulumu 
+
+#archinstallation #linux #linuxturkiye">
+                    </a>
+            </li>
+    <li>
+                <a href="https://scontent.cdninstagram.com/v/t51.29350-15/183618486_319989346178937_2457231916478730841_n.jpg?_nc_cat=102&#038;ccb=1-5&#038;_nc_sid=8ae9d6&#038;_nc_ohc=IyLptiMacEsAX8XzpYn&#038;_nc_ht=scontent.cdninstagram.com&#038;edm=ANo9K5cEAAAA&#038;oh=00_AT9mXRhnlxr-hRe-uaGuS5BA2ioydgXj1BfEpYqGrS9Gqw&#038;oe=62664159">
+                            <img src="https://scontent.cdninstagram.com/v/t51.29350-15/183618486_319989346178937_2457231916478730841_n.jpg?_nc_cat=102&#038;ccb=1-5&#038;_nc_sid=8ae9d6&#038;_nc_ohc=IyLptiMacEsAX8XzpYn&#038;_nc_ht=scontent.cdninstagram.com&#038;edm=ANo9K5cEAAAA&#038;oh=00_AT9mXRhnlxr-hRe-uaGuS5BA2ioydgXj1BfEpYqGrS9Gqw&#038;oe=62664159" 
+                    alt="Linux’ta Shell Değiştirme
+
+Çoğu Linux dağıtımında varsayılan kabuk olarak Bash gelir. Bash’in zsh, fish gibi alternatifleri vardır... Devamını oku: https://linuxsorularim.com/linuxta-shell-degistirme
+
+#linux #linuxturkiye #bash #zsh #fish #shell">
+                    </a>
+            </li>
+    <li>
+                <a href="https://scontent.cdninstagram.com/v/t51.29350-15/183932218_370945704318719_3620368701735860742_n.jpg?_nc_cat=102&#038;ccb=1-5&#038;_nc_sid=8ae9d6&#038;_nc_ohc=rMXBk10CNxAAX8uEzhi&#038;_nc_ht=scontent.cdninstagram.com&#038;edm=ANo9K5cEAAAA&#038;oh=00_AT9vSTNAuZPM7M2wZOfbhnNg8Dv3Mj0GDj9zIC6NKAXvJA&#038;oe=62666E45">
+                            <img src="https://scontent.cdninstagram.com/v/t51.29350-15/183932218_370945704318719_3620368701735860742_n.jpg?_nc_cat=102&#038;ccb=1-5&#038;_nc_sid=8ae9d6&#038;_nc_ohc=rMXBk10CNxAAX8uEzhi&#038;_nc_ht=scontent.cdninstagram.com&#038;edm=ANo9K5cEAAAA&#038;oh=00_AT9vSTNAuZPM7M2wZOfbhnNg8Dv3Mj0GDj9zIC6NKAXvJA&#038;oe=62666E45" 
+                    alt="Gentoo Linux&#039;ta paket kurulumu
+
+Gentoo Linux’ta paket kurmak için birkaç seçeneğiniz var... Devamını oku: https://linuxsorularim.com/gentoo-linuxta-paket-kurulumu
+
+#linux #linuxturkiye #gnulinux #gentoolinux">
+                    </a>
+            </li>
+    <li>
+                <a href="https://scontent.cdninstagram.com/v/t51.29350-15/183943092_185140163465427_1731828226168644168_n.jpg?_nc_cat=104&#038;ccb=1-5&#038;_nc_sid=8ae9d6&#038;_nc_ohc=OFh90L2stlMAX9rX5gC&#038;_nc_ht=scontent.cdninstagram.com&#038;edm=ANo9K5cEAAAA&#038;oh=00_AT_H2YsmUF1d8LeETfjdMYakVleI53TekPfIyQtQdw_j4w&#038;oe=626507A3">
+                            <img src="https://scontent.cdninstagram.com/v/t51.29350-15/183943092_185140163465427_1731828226168644168_n.jpg?_nc_cat=104&#038;ccb=1-5&#038;_nc_sid=8ae9d6&#038;_nc_ohc=OFh90L2stlMAX9rX5gC&#038;_nc_ht=scontent.cdninstagram.com&#038;edm=ANo9K5cEAAAA&#038;oh=00_AT_H2YsmUF1d8LeETfjdMYakVleI53TekPfIyQtQdw_j4w&#038;oe=626507A3" 
+                    alt="Microsoft Edge Beta sürümü Linux için çıktı
+
+Geçen seneden beri dev kanalında olan Microsoft Edge sonunda beta kanalına geçebildi. Devamını oku: https://linuxsorularim.com/microsoft-edge-beta-surumu-linux-icin-cikti
+
+#linux #microsoftedge">
+                    </a>
+            </li>
+</ul>
+
+<a class="profile-link" href="https://www.instagram.com/linuxsorularim" target="_blank" rel="noreferrer">
+    <span class="insta-icon"><i class="fab fa-instagram"></i></span>Instagram üzerinden takip et</a>
+
+</section></aside><!-- #secondary -->
+            
+            </div><!-- .container -->        
+        </div><!-- .site-content -->
+        
+        <section class="recommended-post">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">Önerilen yazılar</h2>                </header>    
+                <div class="post-wrapper">    		
+    			                
+                    <article class="post">
+                        <div class="holder">
+                            <div class="top">
+                                <div class="post-thumbnail">
+                                    <a href="https://linuxsorularim.com/linuxta-homebrew-linuxbrew" class="post-thumbnail">
+                                    <img width="374" height="249" src="https://linuxsorularim.com/wp-content/uploads/2021/05/linuxbrew-374x249.jpg" class="attachment-blossom-pin-related size-blossom-pin-related wp-post-image" alt="" loading="lazy" itemprop="image" />                                    </a>
+                                </div>
+                                <header class="entry-header">
+                                <span class="category" itemprop="about"><a href="https://linuxsorularim.com/category/gnu-linux/rehberler" rel="category tag">Rehberler</a></span><h3 class="entry-title"><a href="https://linuxsorularim.com/linuxta-homebrew-linuxbrew" rel="bookmark">Linux&#8217;ta Homebrew: LinuxBrew</a></h3>                        
+                                </header>                                
+                            </div> <!-- .top -->
+                            <div class="bottom">
+                                <span class="posted-on"><a href="https://linuxsorularim.com/linuxta-homebrew-linuxbrew" rel="bookmark"><time class="entry-date published updated" datetime="2021-05-27T09:18:30+03:00" itemprop="dateModified">Mayıs 27, 2021</time><time class="updated" datetime="2021-05-27T09:18:28+03:00" itemprop="datePublished">Mayıs 27, 2021</time></a></span>                            </div> <!-- .bottom --> 
+                    </div> <!-- .holder -->
+        			</article>            
+    			                
+                    <article class="post">
+                        <div class="holder">
+                            <div class="top">
+                                <div class="post-thumbnail">
+                                    <a href="https://linuxsorularim.com/linuxta-shell-degistirme" class="post-thumbnail">
+                                    <img width="374" height="249" src="https://linuxsorularim.com/wp-content/uploads/2021/05/bash-374x249.jpg" class="attachment-blossom-pin-related size-blossom-pin-related wp-post-image" alt="" loading="lazy" itemprop="image" />                                    </a>
+                                </div>
+                                <header class="entry-header">
+                                <span class="category" itemprop="about"><a href="https://linuxsorularim.com/category/gnu-linux/rehberler" rel="category tag">Rehberler</a></span><h3 class="entry-title"><a href="https://linuxsorularim.com/linuxta-shell-degistirme" rel="bookmark">Linux&#8217;ta Shell Değiştirme</a></h3>                        
+                                </header>                                
+                            </div> <!-- .top -->
+                            <div class="bottom">
+                                <span class="posted-on"><a href="https://linuxsorularim.com/linuxta-shell-degistirme" rel="bookmark"><time class="entry-date published updated" datetime="2021-05-07T19:07:34+03:00" itemprop="dateModified">Mayıs 7, 2021</time><time class="updated" datetime="2021-05-07T19:07:32+03:00" itemprop="datePublished">Mayıs 7, 2021</time></a></span>                            </div> <!-- .bottom --> 
+                    </div> <!-- .holder -->
+        			</article>            
+    			                
+                    <article class="post">
+                        <div class="holder">
+                            <div class="top">
+                                <div class="post-thumbnail">
+                                    <a href="https://linuxsorularim.com/terminali-verimli-kullanin" class="post-thumbnail">
+                                    <img width="374" height="249" src="https://linuxsorularim.com/wp-content/uploads/2021/05/terminal-374x249.png" class="attachment-blossom-pin-related size-blossom-pin-related wp-post-image" alt="" loading="lazy" itemprop="image" />                                    </a>
+                                </div>
+                                <header class="entry-header">
+                                <span class="category" itemprop="about"><a href="https://linuxsorularim.com/category/gnu-linux/rehberler" rel="category tag">Rehberler</a></span><h3 class="entry-title"><a href="https://linuxsorularim.com/terminali-verimli-kullanin" rel="bookmark">Terminali verimli kullanın</a></h3>                        
+                                </header>                                
+                            </div> <!-- .top -->
+                            <div class="bottom">
+                                <span class="posted-on"><a href="https://linuxsorularim.com/terminali-verimli-kullanin" rel="bookmark"><time class="entry-date published updated" datetime="2021-05-12T02:05:50+03:00" itemprop="dateModified">Mayıs 12, 2021</time><time class="updated" datetime="2021-05-12T02:01:08+03:00" itemprop="datePublished">Mayıs 12, 2021</time></a></span>                            </div> <!-- .bottom --> 
+                    </div> <!-- .holder -->
+        			</article>            
+    			                </div><!-- .post-wrapper -->
+    	   </div> <!-- .container -->
+        </section>
+        <div class="comment-section">
+    <div class="container">
+		<div id="comments" class="comments-area">
+
+				<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Bir cevap yazın <small><a rel="nofollow" id="cancel-comment-reply-link" href="/arch-linux-kurulumu#respond" style="display:none;">Cevabı iptal et</a></small></h3><form action="https://linuxsorularim.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-notes"><span id="email-notes">E-posta hesabınız yayımlanmayacak.</span> <span class="required-field-message" aria-hidden="true">Gerekli alanlar <span class="required" aria-hidden="true">*</span> ile işaretlenmişlerdir</span></p><p class="comment-form-comment"><label class="screen-reader-text">Yorum</label><textarea id="comment" name="comment" placeholder="Yorum" cols="45" rows="8" aria-required="true"></textarea></p><p class="comment-form-author"><label class="screen-reader-text">Tam isim</label><input id="author" name="author" placeholder="İsim*" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-email"><label class="screen-reader-text">E-posta</label><input id="email" name="email" placeholder="E-Posta*" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-url"><label class="screen-reader-text">İnternet sitesi</label><input id="url" name="url" placeholder="İnternet sitesi" type="text" value="" size="30" /></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" /> <label for="wp-comment-cookies-consent">Bir dahaki sefere yorum yaptığımda kullanılmak üzere adımı, e-posta adresimi ve web site adresimi bu tarayıcıya kaydet.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Yorum gönder" /> <input type='hidden' name='comment_post_ID' value='76' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p></form>	</div><!-- #respond -->
+			</div>		
+	</div> <!-- .container -->
+</div> <!-- .comment-section -->
+
+            
+            </div><!-- .container -->        
+        </div><!-- .site-content -->
+        <footer id="colophon" class="site-footer" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="footer-b">
+		<div class="container">
+			<div class="site-info">            
+            <span class="copyright">&copy; Telif hakkı2022 <a href="https://linuxsorularim.com/">Linux Sorularım</a>. Tüm hakları saklıdır.</span>Blossom Pin | Geliştiren<a href="https://blossomthemes.com/" rel="nofollow" target="_blank">Blossom Themes</a>.Altyapı <a href="https://wordpress.org/" target="_blank">WordPress</a>.                
+            </div>
+                <nav class="footer-nav">
+            </nav>
+    		</div>
+	</div>
+        <button aria-label="Başa git" class="back-to-top">
+        <span><i class="fas fa-long-arrow-alt-up"></i></span>
+    </button>
+        </footer><!-- #colophon -->
+        </div><!-- #page -->
+    <script type='text/javascript' id='blossomthemes-email-newsletter-js-extra'>
+/* <![CDATA[ */
+var bten_ajax_data = {"ajaxurl":"https:\/\/linuxsorularim.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://linuxsorularim.com/wp-content/plugins/blossomthemes-email-newsletter/public/js/blossomthemes-email-newsletter-public.min.js?ver=2.1.7' id='blossomthemes-email-newsletter-js'></script>
+<script type='text/javascript' src='https://linuxsorularim.com/wp-content/plugins/blossomthemes-email-newsletter/public/js/all.min.js?ver=5.6.3' id='all-js'></script>
+<script type='text/javascript' src='https://linuxsorularim.com/wp-content/plugins/blossomthemes-instagram-feed/public/js/blossomthemes-instagram-feed-public.js?ver=2.0.3' id='blossomthemes-instagram-feed-js'></script>
+<script type='text/javascript' src='https://linuxsorularim.com/wp-content/plugins/blossomthemes-instagram-feed/public/js/jquery.magnific-popup.min.js?ver=1.0.0' id='magnific-popup-js'></script>
+<script type='text/javascript' src='https://linuxsorularim.com/wp-content/plugins/blossomthemes-toolkit/public/js/isotope.pkgd.min.js?ver=3.0.5' id='isotope-pkgd-js'></script>
+<script type='text/javascript' src='https://linuxsorularim.com/wp-includes/js/imagesloaded.min.js?ver=4.1.4' id='imagesloaded-js'></script>
+<script type='text/javascript' src='https://linuxsorularim.com/wp-includes/js/masonry.min.js?ver=4.2.2' id='masonry-js'></script>
+<script type='text/javascript' src='https://linuxsorularim.com/wp-content/plugins/blossomthemes-toolkit/public/js/blossomthemes-toolkit-public.min.js?ver=2.2.2' id='blossomthemes-toolkit-js'></script>
+<script type='text/javascript' src='https://linuxsorularim.com/wp-content/plugins/blossomthemes-toolkit/public/js/fontawesome/v4-shims.min.js?ver=5.6.3' id='v4-shims-js'></script>
+<script type='text/javascript' src='https://linuxsorularim.com/wp-content/themes/blossom-pin/js/owl.carousel.min.js?ver=2.0.1' id='owl-carousel-js'></script>
+<script type='text/javascript' src='https://linuxsorularim.com/wp-content/themes/blossom-pin/js/owlcarousel2-a11ylayer.min.js?ver=0.2.1' id='owlcarousel2-a11ylayer-js'></script>
+<script type='text/javascript' id='blossom-pin-js-extra'>
+/* <![CDATA[ */
+var blossom_pin_data = {"rtl":"","ajax_url":"https:\/\/linuxsorularim.com\/wp-admin\/admin-ajax.php","single":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://linuxsorularim.com/wp-content/themes/blossom-pin/js/custom.min.js?ver=1.2.8' id='blossom-pin-js'></script>
+<script type='text/javascript' src='https://linuxsorularim.com/wp-content/themes/blossom-pin/js/modal-accessibility.min.js?ver=1.2.8' id='blossom-pin-modal-js'></script>
+<script type='text/javascript' src='https://linuxsorularim.com/wp-includes/js/comment-reply.min.js?ver=5.9.3' id='comment-reply-js'></script>
+
+</body>
+</html>
