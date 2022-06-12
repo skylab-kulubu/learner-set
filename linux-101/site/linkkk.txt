@@ -1,0 +1,5 @@
+https://bbs.archlinux.org/viewtopic.php?id=269182
+https://linuxsorularim.com/arch-linux-kurulumu
+https://www.sordum.net/28071/diskiniz-mbr-mi-gpt-mi-bir-tikla-bulun/
+https://medium.com/@erayaydin/arch-linux-kurulumu-44804db64ef7
+https://wiki.archlinux.org/title/Installation_guide#Pre-installation
