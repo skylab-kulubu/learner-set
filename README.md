@@ -1,2 +1,2 @@
 # learner-set
-this repo created by SKY LAB AKADEMİ
+This repo created by SKY LAB AKADEMİ
