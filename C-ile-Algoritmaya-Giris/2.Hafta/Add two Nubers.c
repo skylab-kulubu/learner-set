@@ -1,19 +1,21 @@
 #include <stdio.h>
-
 int main()
 {
-    int num1, num2, sum;
+    int num1, num2; 
+	float sum;
+    printf("Enter any one number : ");
+    scanf("%d", &num1);
     
-    /*
-     * Input two numbers from user
-     */
-    printf("Enter any two numbers : ");
-    scanf("%d%d", &num1, &num2);
+    num1= num1+1;
+    printf("%d\n",num1);
     
-    sum = num1 + num2;
+    num1++;
+    printf("%d\n",num1);
     
-    /* Prints the sum of two numbers */
-    printf("Sum of %d and %d = %d\n", num1, num2, sum);
+    num1+=1;
+    printf("%d",num1);
+    
+    //printf("Sum of %d and %d = \n%f", num1, num2, sum);
     
     return 0;
 }
