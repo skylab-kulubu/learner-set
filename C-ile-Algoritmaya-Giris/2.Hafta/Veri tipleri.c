@@ -7,21 +7,21 @@ int main(int argc, char const *argv[])
 
     printf("Harf: %c \nHarf: %c\n",harf,harf2);
     
-    short sayı0 = 1000;   // -32768 <= sayı0 <= 32767  2byte
+    short sayi0 = 1000;   // -32768 <= sayi0 <= 32767  2byte
 
-    printf("Sayı0: %hd\n",sayı0);
-    sayı0 = 32768;
-    printf("Sayı0: %hd\n",sayı0);
+    printf("Sayı0: %hd\n",sayi0);
+    sayi0 = 32768;
+    printf("Sayı0: %hd\n",sayi0);
 
-    int sayı1=214783647; 
-    printf("Sayı0: %d\n",sayı1);
+    int sayi1=214783647; 
+    printf("Sayı0: %d\n",sayi1);
 
-    long sayı4;
-    float sayı2;
-    double sayı3;
+    long sayi4;
+    float sayi2;
+    double sayi3;
 
     
-    sayı1 = 5;
+    sayi1 = 5;
 
 
     return 0;
