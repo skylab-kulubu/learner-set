@@ -2,9 +2,10 @@
 
 int main()
 {
-    int dizi [5] = {14,7,89,55,98};
+    int dizi [] = {14,7,89,55,98};
+    int i;
     
-    for(int i = 0; i < 5; i++)
+    for(i = 0; i<8 ; i++)
     {
         printf("Dizi [%d] = %d\n",i,dizi[i]);
     }

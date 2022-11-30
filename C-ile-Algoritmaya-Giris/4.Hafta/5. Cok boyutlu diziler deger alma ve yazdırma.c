@@ -2,19 +2,20 @@
 
 int main()
 {
-  int dizi[2][3] = {{12,34,22},{11,49,98}};        
+  int dizi[2][3];// = {{12,34,22},{11,49,98}};        
+  int i,j;
   
-  for(int i = 0; i < 3; i++)
+  for( i = 0; i < 2; i++)
      {
-          for(int j = 0; j < 4; j++)
+          for( j = 0; j < 3; j++)
           {
                printf("Dizi[%d][%d] = ",i,j);
                scanf("%d",&dizi[i][j]);
           }
      }
-     for(int i = 0; i < 3; i++)
+     for(i = 0; i < 2; i++)
      {
-          for(int j = 0; j <4; j++)
+          for(j = 0; j <3; j++)
           {
                printf("%d\t",dizi[i][j]);
           }
