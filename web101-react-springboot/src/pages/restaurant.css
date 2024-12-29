@@ -1,0 +1,43 @@
+main.restaurant {
+  background-color: rgb(230, 230, 240);
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+article {
+  display: flex;
+  background-color: white;
+  border: 5px solid silver;
+
+  gap: 40px;
+  padding: 20px;
+
+  border-radius: 20px;
+  min-height: 90%;
+}
+
+aside {
+  display: grid;
+  grid-template-columns: repeat(5, var(--table-size));
+  grid-template-rows: repeat(3, var(--table-size));
+  grid-auto-flow: row;
+  gap: 30px;
+}
+
+.windowSide {
+  font-size: 2rem;
+  border-radius: 20px;
+
+  width: min-content;
+  padding: 0px 5px;
+
+  color: rgb(161, 161, 161);
+  background-color: rgba(110, 202, 182, 0.6);
+
+  text-align: center;
+  writing-mode: vertical-rl;
+  letter-spacing: 1.5rem;
+  transform: rotateZ(180deg);
+}

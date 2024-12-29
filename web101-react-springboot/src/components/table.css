@@ -1,0 +1,154 @@
+.table {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(230, 230, 240);
+  gap: 30px;
+  border: 4px solid gray;
+  border-radius: 20px;
+  color: rgb(142, 142, 153);
+  cursor: pointer;
+}
+
+.table.selected {
+  background-color: rgb(220, 0, 0);
+  color: white;
+}
+.table.selected img {
+  filter: brightness(100%);
+}
+
+.table:focus {
+  border: 4px solid black;
+}
+
+.table-id {
+  font-size: 1.5rem;
+}
+
+.capacityDiv {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+}
+.capacityDiv > img {
+  width: 2rem;
+  height: 2rem;
+  filter: brightness(60%);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.5s ease; /* Açılma animasyonu */
+}
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 400px;
+  text-align: center;
+  font-size: 18px;
+  position: relative;
+  animation: slideDown 0.5s ease; /* İçeriğin aşağı kayarak gelme animasyonu */
+}
+
+.modal-content h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.modal-content p {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: red;
+}
+
+.reserve-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.reserve-btn:hover {
+  background-color: #45a049;
+}
+
+.cancel-btn {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* Fade-in animasyonu */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal içeriği için slide-down animasyonu */
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Modal kapanırken fade-out animasyonu */
+.fadeOut {
+  animation: fadeOut 0.5s ease forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
